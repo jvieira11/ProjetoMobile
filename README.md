@@ -1,50 +1,112 @@
-# Welcome to your Expo app 👋
+# 📱 Projeto Mobile com Expo -- Catálogo de Pokémon
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Este repositório contém o desenvolvimento de um aplicativo mobile criado
+com **React Native + Expo**, seguindo os requisitos do projeto final da
+disciplina.\
+O app utiliza múltiplas telas, componentes personalizados, consumo de
+API, pesquisa dinâmica e interface responsiva. Ele foi totalmente
+desenvolvido no **Expo.dev**.
 
-## Get started
+------------------------------------------------------------------------
 
-1. Install dependencies
+## 📘 Funcionalidades do App
 
-   ```bash
-   npm install
-   ```
+-   Exibição de uma lista de Pokémon consumidos da **PokeAPI**\
+-   Pesquisa por nome com atualização dinâmica da lista\
+-   Tela de detalhes com informações específicas\
+-   Navegação entre telas com react-navigation\
+-   Componentes reutilizáveis como cards, header e input de busca\
+-   Interface limpa, organizada e responsiva
 
-2. Start the app
+------------------------------------------------------------------------
 
-   ```bash
-   npx expo start
-   ```
+## 🏗️ Organização das Pastas
 
-In the output, you'll find options to open the app in a
+    ProjetoMobile/
+    │-- app/
+    │   │-- navigation/
+    │   │   └── AppNavigator.jsx
+    |   |
+    │   │-- screens/
+    │   │   ├── HomeScreen.jsx
+    │   │   ├── DetailsScreen.jsx
+    │   │   └── SearchScreen.jsx
+    |   |
+    |   |-- _layout.jsx
+    |   |
+    │   │-- assets/
+    │   │   └── icon/
+    │   │   └── img/
+    |   |
+    │   │-- components/
+    │   │   └── Header.jsx
+    │   │   └── PokemonCard.jsx
+    │   │   └── SearchBar.jsx
+    |   |
+    │   │-- hooks/
+    │   │   └── useFetch.js
+    |   |
+    │   │-- constants/
+    │   │   └── api.js
+    |   |
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+------------------------------------------------------------------------
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🔌 API Utilizada
 
-## Get a fresh project
+**PokeAPI:**\
+https://pokeapi.co/
 
-When you're ready, run:
+Arquivo de constantes (`src/constants/api.js`):
 
-```bash
-npm run reset-project
+``` js
+export const API_URL = "https://pokeapi.co/api/v2/pokemon";
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+------------------------------------------------------------------------
 
-## Learn more
+## 🎨 Interface
 
-To learn more about developing your project with Expo, look at the following resources:
+O layout foi desenvolvido com foco em:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+-   Legibilidade e simplicidade\
+-   Cards organizados e padronizados\
+-   Layout responsivo para diferentes resoluções\
+-   Navegação clara e intuitiva
 
-## Join the community
+------------------------------------------------------------------------
 
-Join our community of developers creating universal apps.
+## 🧰 Tecnologias Utilizadas
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+-   React Native\
+-   Expo\
+-   React Navigation\
+-   PokeAPI\
+-   JavaScript (ES6+)
+
+------------------------------------------------------------------------
+
+## 🧪 Como Rodar o Projeto
+
+1.  Instale as dependências:
+
+``` bash
+npm install
+```
+
+2.  Inicie o ambiente do Expo:
+
+``` bash
+npx expo start
+```
+
+3.  Abra o aplicativo **Expo Go** no celular e escaneie o QR Code.
+
+------------------------------------------------------------------------
+
+## 📌 Notas Finais
+
+Este projeto foi desenvolvido aplicando componentização, organização de
+pastas, navegação, integração com API e boas práticas de desenvolvimento
+mobile utilizando Expo.\
+O README serve como documentação oficial do projeto.
