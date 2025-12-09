@@ -27,10 +27,14 @@ desenvolvido no **Expo.dev**.
     │   │-- navigation/
     │   │   └── AppNavigator.jsx
     |   |
+    │   │-- context/
+    │   │   └── FavoritesContext.jsx
+    |   |
     │   │-- screens/
     │   │   ├── HomeScreen.jsx
     │   │   ├── DetailsScreen.jsx
-    │   │   └── SearchScreen.jsx
+    │   │   └── FavoritesScreen.jsx
+    │   │   └── SplashScreen.jsx
     |   |
     |   |-- _layout.jsx
     |   |
