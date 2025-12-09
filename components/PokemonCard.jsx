@@ -1,36 +1,41 @@
-import React from "react";
+import React, { useContext } from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { FavoritesContext } from "../app/context/FavoritesContext";
 
 export default function PokemonCard({
   id,
   name,
   image,
-  isFavorite,
   onPress,
-  onToggleFavorite,
   style
 }) {
+  const { favorites, toggleFavorite } = useContext(FavoritesContext);
+
+  const isFavorite = favorites.some((p) => p.id === id);
+
   return (
-    <TouchableOpacity 
+    <TouchableOpacity
       style={[styles.card, style]}
       onPress={() => onPress && onPress(id)}
       activeOpacity={0.8}
     >
-    
       <Image source={{ uri: image }} style={styles.image} />
 
-      
       <Text style={styles.name}>{name}</Text>
 
-      
+      {/* Botão de favorito funcionando com Context */}
       <TouchableOpacity
         style={styles.favoriteButton}
-        onPress={() => onToggleFavorite && onToggleFavorite(id)}
+        onPress={(e) => {
+          e.stopPropagation(); // impede de abrir a tela ao favoritar
+          toggleFavorite({ id, name, image });
+        }}
       >
         <Text style={styles.favoriteIcon}>
           {isFavorite ? "❤️" : "🤍"}
         </Text>
       </TouchableOpacity>
+
     </TouchableOpacity>
   );
 }
@@ -44,8 +49,8 @@ const styles = StyleSheet.create({
     marginBottom: 14,
     alignItems: "center",
     justifyContent: "center",
-    elevation: 3, // leve sombra Android
-    shadowColor: "#000", // leve sombra iOS
+    elevation: 3,
+    shadowColor: "#000",
     shadowOpacity: 0.1,
     shadowRadius: 4,
     shadowOffset: { width: 0, height: 2 },

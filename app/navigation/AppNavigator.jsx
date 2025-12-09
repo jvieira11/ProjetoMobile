@@ -14,6 +14,7 @@ const Tab = createBottomTabNavigator();
 function Tabs() {
   return (
     <Tab.Navigator
+    initialRouteName="Home"  // 👉 Força abrir a Home primeiro
       screenOptions={({ route }) => ({
         headerShown: false, 
         tabBarIcon: ({ color, size }) => {
