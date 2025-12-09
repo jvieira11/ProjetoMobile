@@ -46,9 +46,6 @@ function Tabs() {
   );
 }
 
-// --------------------------------------
-// Stack Principal
-// --------------------------------------
 export default function AppNavigator() {
   return (
     <NavigationContainer>
@@ -61,7 +58,7 @@ export default function AppNavigator() {
           options={{ headerShown: false }}
         />
 
-        {/* Tela de detalhes (abre por cima das tabs) */}
+        {/* Tela de detalhes */}
         <Stack.Screen
           name="Details"
           component={DetailsScreen}
