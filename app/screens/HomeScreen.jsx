@@ -67,18 +67,26 @@ export default function HomeScreen({ navigation }) {
         keyExtractor={(item) => item.name}
         numColumns={2}
         contentContainerStyle={{ paddingBottom: 80 }}
-        renderItem={({ item }) => (
+        renderItem={({ item }) => {
+          const id = item.url.split("/").filter(Boolean).pop();
+
+          const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
+          
+          return (
           <PokemonCard
+            id={id}
             name={item.name}
-            url={item.url}
+            image={image}
+            isFavorite={false}
             onPress={() =>
               navigation.navigate("Details", {
+                id,
                 name: item.name,
-                url: item.url,
+                image,
               })
             }
-          />
-        )}
+          />)
+        }}
       />
     </View>
   );
