@@ -10,7 +10,7 @@ export default function Header({ title, subtitle, showBack = false, onBackPress 
           <Ionicons name="arrow-back" size={24} color="#333" />
         </TouchableOpacity>
       ) : (
-        <View style={{ width: 24 }} /> // espaço para alinhar caso não tenha botão
+        <View style={{ width: 24 }} />
       )}
 
       <View style={styles.textContainer}>
@@ -18,7 +18,7 @@ export default function Header({ title, subtitle, showBack = false, onBackPress 
         {subtitle && <Text style={styles.subtitle}>{subtitle}</Text>}
       </View>
 
-      <View style={{ width: 24 }} /> {/* espaço para balancear o layout */}
+      <View style={{ width: 24 }} />
     </View>
   );
 }

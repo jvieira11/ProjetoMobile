@@ -76,7 +76,6 @@ export default function HomeScreen({ navigation }) {
               id={id}
               name={item.name}
               image={image}
-              //isFavorite={false}
               onPress={() =>
                 navigation.navigate("Details", {
                   id,

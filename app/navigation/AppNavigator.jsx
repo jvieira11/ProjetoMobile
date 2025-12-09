@@ -16,7 +16,8 @@ function Tabs() {
     <Tab.Navigator
     initialRouteName="Home"  // 👉 Força abrir a Home primeiro
       screenOptions={({ route }) => ({
-        headerShown: false, 
+        headerShown: false,
+        animation: "fade", 
         tabBarIcon: ({ color, size }) => {
           let iconName;
 
@@ -63,7 +64,7 @@ export default function AppNavigator() {
         <Stack.Screen
           name="Details"
           component={DetailsScreen}
-          options={{ title: "Detalhes do Pokémon" }}
+          options={{ animation: "slide_from_right", title: "Detalhes do Pokémon"}}
         />
       </Stack.Navigator>
     </NavigationContainer>
