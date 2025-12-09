@@ -60,7 +60,7 @@ export default function HomeScreen({ navigation }) {
     <View style={styles.container}>
       <Header title="Pokédex" />
 
-      <SearchBar value={search} onChangeText={setSearch} />
+      <SearchBar onSearch={setSearch} />
 
       <FlatList
         data={filteredData}
